@@ -1,4 +1,4 @@
-Helicopter camera for pawn, filterscript.
+Helicopter camera for pawn.
 thats system video https://streamable.com/wq8yzg
 
 For use
