@@ -1,5 +1,4 @@
-Helicopter camera for pawn.
-thats system video https://streamable.com/wq8yzg
+Helicopter camera for pawn, video: https://streamable.com/wq8yzg.
 
 For use
 
