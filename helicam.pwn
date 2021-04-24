@@ -32,7 +32,7 @@ YerGozetleBitir(playerid)
 	 	 DestroyPlayerObject(playerid, pZortObject[playerid]);
 }
 
-CMD:yergozetle(playerid, params[])
+CMD:helicam(playerid, params[])
 {
 	new vehicleid = GetPlayerVehicleID(playerid);
 
