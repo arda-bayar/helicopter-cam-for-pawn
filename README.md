@@ -8,4 +8,4 @@ Open a folder named "models" and put object.dff, helicopter.txd into folder. Cre
 AddSimpleModel(-1,19379, -2001, "object.dff", "helicopter.txd");
 
 Includes:
-a_samp, streamer, foreach, sscanf2, zcmd.
+a_samp, streamer, foreach, sscanf, zcmd.
