@@ -80,6 +80,7 @@ public KardesimHelikopter(playerid)
 public OnPlayerConnect(playerid)
 {
 	PlayerData[playerid][pYerGozetle] = 0;
+	CreateTextdraw(playerid);
 	return 1;
 }
 
@@ -109,6 +110,18 @@ public OnPlayerDeath(playerid, killerid, reason)
 	return 1;
 }
 
+public OnPlayerExitVehicle(playerid, vehicleid)
+{
+	if(PlayerData[playerid][pYerGozetle] == 1)
+	{
+  	PlayerData[playerid][pYerGozetle] = 0;
+	TogglePlayerSpectating(playerid, false);
+	YerGozetleBitir(playerid);
+	for(new i=0; i < 1; i++) PlayerTextDrawHide(playerid, HelikopterGosterge[playerid][i]);
+	}
+	return 1;
+}
+
 public OnPlayerCommandText(playerid, cmdtext[])
 {
 	return 0;
@@ -132,4 +145,5 @@ stock CreateTextdraw(playerid)
 	PlayerTextDrawFont(playerid, HelikopterGosterge[playerid][0], 4);
 	PlayerTextDrawSetProportional(playerid, HelikopterGosterge[playerid][0], 0);
 	PlayerTextDrawSetShadow(playerid, HelikopterGosterge[playerid][0], 0);
+	return 1;
 }
