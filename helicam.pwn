@@ -55,7 +55,7 @@ CMD:helicam(playerid, params[])
 		SetPlayerChatBubble(playerid, strs, COLOR_TOMATO, 10.0, 1500);
 
 		pZortObject[playerid] = CreatePlayerObject(playerid, 19482, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0);
-		AttachPlayerObjectToVehicle(playerid, pZortObject[playerid], vehicleid, 0.0, 0.0, -1.3, 0.0, 0.0, 0.0);
+		AttachPlayerObjectToVehicle(playerid, pZortObject[playerid], vehicleid, 0.0, 0.0, -1.7, 0.0, 0.0, 0.0);
 		kardesim_helikopter[playerid] = SetTimerEx("KardesimHelikopter", 10, true, "d", playerid);
 		}
 		case 1:
