@@ -94,6 +94,7 @@ public OnPlayerDisconnect(playerid, reason)
 public OnPlayerSpawn(playerid)
 {
 	PlayerData[playerid][pYerGozetle] = 0;
+	CreateTextdraw(playerid);
 	return 1;
 }
 
@@ -110,17 +111,11 @@ public OnPlayerDeath(playerid, killerid, reason)
 	return 1;
 }
 
-public OnPlayerExitVehicle(playerid, vehicleid)
+/*public OnPlayerSpawn(playerid)
 {
-	if(PlayerData[playerid][pYerGozetle] == 1)
-	{
-  	PlayerData[playerid][pYerGozetle] = 0;
-	TogglePlayerSpectating(playerid, false);
-	YerGozetleBitir(playerid);
-	for(new i=0; i < 1; i++) PlayerTextDrawHide(playerid, HelikopterGosterge[playerid][i]);
-	}
+	CreateTextdraw(playerid);
 	return 1;
-}
+}*/
 
 public OnPlayerCommandText(playerid, cmdtext[])
 {
@@ -131,6 +126,21 @@ public OnRconCommand(cmd[])
 {
 	return 1;
 }
+
+public OnPlayerExitVehicle(playerid, vehicleid)
+{
+	if(PlayerData[playerid][pYerGozetle] == 1)
+    {
+    	//PlayerData[playerid][pYerGozetleSure] = 0;
+    	PlayerData[playerid][pYerGozetle] = 0;
+ 	  	TogglePlayerSpectating(playerid, false);
+       	YerGozetleBitir(playerid);
+  		for(new i=0; i < 1; i++) PlayerTextDrawHide(playerid, HelikopterGosterge[playerid][i]);
+    	PutPlayerInVehicle(playerid, vehicleid, 2);
+    }
+}
+
+
 
 stock CreateTextdraw(playerid)
 {
@@ -145,5 +155,7 @@ stock CreateTextdraw(playerid)
 	PlayerTextDrawFont(playerid, HelikopterGosterge[playerid][0], 4);
 	PlayerTextDrawSetProportional(playerid, HelikopterGosterge[playerid][0], 0);
 	PlayerTextDrawSetShadow(playerid, HelikopterGosterge[playerid][0], 0);
-	return 1;
 }
+
+CMD:helicoptercamera(playerid, params[])
+	return cmd_helicam(playerid, params);
